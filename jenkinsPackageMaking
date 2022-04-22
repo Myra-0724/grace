@@ -1,0 +1,33 @@
+      -JAVA-
+
+Download java software
+
+  sudo yum install jenkins java-1.8.0-openjdk-devel -y
+
+Download jenkins
+
+   sudo yum update –y
+   sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+   sudo systemctl daemon-reload
+Start Jenkins as a service:
+
+    sudo systemctl start jenkins
+You can check the status of the Jenkins service using the command:
+
+    sudo systemctl status jenkins
+Configure Jenkins
+  -Create jenkins
+
+
+  On jenkins server
+
+    git clone https://github.com/spring-projects/spring-petclinic.git
+    cd spring-petclinic
+    ./mvnw package
+    java -jar target/*.jar
+
+    Check the port
+    configure port
+    browse:port
